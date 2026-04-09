@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Print Lab</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <span class="brand-badge"><i class="fa-solid fa-cube"></i></span>
+        <div>
+          <p class="eyebrow" data-i18n="tagline">Студия прототипирования</p>
+          <h1 class="brand-title" data-i18n="brand">3D Print Lab</h1>
+        </div>
+      </div>
+
+      <button class="icon-button" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <main class="main-content">
+      <section class="hero-card">
+        <div>
+          <p class="section-kicker" data-i18n="kicker">Выбор размера</p>
+          <h2 class="hero-title" data-i18n="heroTitle">Выберите формат модели для 3D-печати</h2>
+          <p class="hero-text" data-i18n="heroText">Подберите удобный диапазон размеров, чтобы перейти к оплате заказа.</p>
+        </div>
+      </section>
+
+      <section class="size-grid" aria-label="Size options">
+        <button class="size-card" type="button" data-open-modal>
+          <span class="size-icon"><i class="fa-solid fa-ruler-combined"></i></span>
+          <h3 data-i18n="sizeSmall">До 20 см</h3>
+          <p data-i18n="sizeSmallDesc">Компактные фигурки и детали</p>
+        </button>
+
+        <button class="size-card" type="button" data-open-modal>
+          <span class="size-icon"><i class="fa-solid fa-cube"></i></span>
+          <h3 data-i18n="sizeMedium">До 50 см</h3>
+          <p data-i18n="sizeMediumDesc">Макеты среднего размера</p>
+        </button>
+
+        <button class="size-card" type="button" data-open-modal>
+          <span class="size-icon"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span>
+          <h3 data-i18n="sizeLarge">Более 50 см</h3>
+          <p data-i18n="sizeLargeDesc">Крупные прототипы и арт-объекты</p>
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar-header">
+      <div>
+        <p class="sidebar-kicker" data-i18n="menuLabel">Меню</p>
+        <h2 data-i18n="settingsTitle">Настройки</h2>
+      </div>
+      <button class="icon-button" id="sidebarClose" type="button" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <section class="sidebar-section">
+      <h3 class="section-title" data-i18n="languageTitle">Язык</h3>
+      <div class="language-switcher" role="group" aria-label="Language switcher">
+        <button class="lang-button is-active" type="button" data-lang="ru">RU</button>
+        <button class="lang-button" type="button" data-lang="en">EN</button>
+      </div>
+    </section>
+
+    <section class="sidebar-section">
+      <h3 class="section-title" data-i18n="profileTitle">Профиль</h3>
+      <div class="profile-card">
+        <div class="avatar" aria-hidden="true">И</div>
+        <div class="profile-info">
+          <p class="profile-label" data-i18n="profileNameLabel">Имя</p>
+          <p class="profile-value" data-profile="name">Иван Петров</p>
+          <p class="profile-label" data-i18n="profilePhoneLabel">Телефон</p>
+          <p class="profile-value" data-profile="phone">+7 (999) 123-45-67</p>
+        </div>
+      </div>
+    </section>
+  </aside>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-button modal-close" id="modalClose" type="button" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <p class="modal-kicker" data-i18n="modalKicker">Заказ</p>
+      <h2 id="modalTitle" data-i18n="modalTitle">Оплата</h2>
+      <p data-i18n="modalText">Здесь будет форма оплаты</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
